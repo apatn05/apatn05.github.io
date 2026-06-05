@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects · Arnav Patnekar</title>
+<meta name="description" content="Arnav Patnekar — Projects" />
+
+<!-- Distinctive fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- navigation -->
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Arnav Patnekar</a>
+    <div class="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="#" class="soon" data-soon>Blog</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h1>Things I've built</h1>
+  </div>
+</header>
+
+<!--projects -->
+<section id="projects">
+  <div class="wrap reveal">
+    <div class="cards">
+
+      <a class="card" href="[PROJECT-LINK]" target="_blank" rel="noopener">
+        <span class="ptag">Security · Personal Project · Feb 2025</span>
+        <h3>Network Penetration Testing Lab</h3>
+        <p>A self-contained lab for learning offensive security hands-on: scanning a deliberately
+        vulnerable target (Metasploitable) to map open ports, misconfigurations, and known CVEs, then
+        practicing controlled exploitation and live traffic analysis end to end — all in an isolated
+        environment.</p>
+        <div class="stack">
+          <span>Nmap</span><span>Nessus</span><span>Metasploit</span>
+          <span>Ettercap</span><span>Wireshark</span><span>Kali Linux</span>
+        </div>
+        <span class="arrow">View project →</span>
+      </a>
+
+      <!-- Add more cards as you build them — duplicate the block above. -->
+      <a class="card" href="https://github.com/[username]" target="_blank" rel="noopener">
+        <span class="ptag">Coming soon</span>
+        <h3>More on the way</h3>
+        <p>I'm actively building — coursework projects, security write-ups, and tools. Check my GitHub
+        in the meantime.</p>
+        <div class="stack"><span>C++</span><span>Python</span><span>Networking</span></div>
+        <span class="arrow">Visit my GitHub →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> [Your Name] · Built with care · Hosted on GitHub Pages
+</footer>
+
+<div class="toast" id="toast">📝 Blog coming soon — check back later!</div>
+
+<script src="main.js"></script>
+</body>
+</html>
