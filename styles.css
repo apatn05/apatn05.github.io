@@ -165,7 +165,7 @@ section{ padding:80px 0; border-top:1px solid var(--line); }
 .job li::before{ content:"›"; position:absolute; left:0; color:var(--accent); }
 
 /* projects*/
-.cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:20px; }
 @media(max-width:680px){ .cards{ grid-template-columns:1fr; } }
 .card{
   background:var(--bg-2); border:1px solid var(--line); border-radius:6px; padding:26px;
@@ -176,6 +176,9 @@ section{ padding:80px 0; border-top:1px solid var(--line); }
 .card .ptag{ font-family:var(--mono); font-size:.72rem; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; }
 .card h3{ font-family:var(--serif); font-weight:500; font-size:1.45rem; margin:10px 0 8px; }
 .card p{ color:var(--muted); font-size:.96rem; flex:1; }
+.project-points{ list-style:none; flex:1; }
+.project-points li{ color:var(--muted); padding-left:18px; position:relative; margin-bottom:9px; font-size:.96rem; }
+.project-points li::before{ content:"›"; position:absolute; left:0; color:var(--accent); }
 .stack{ display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
 .stack span{ font-family:var(--mono); font-size:.72rem; color:var(--muted); border:1px solid var(--line); padding:3px 9px; border-radius:20px; }
 .card .arrow{ margin-top:18px; font-family:var(--mono); font-size:.85rem; color:var(--accent-2); }
