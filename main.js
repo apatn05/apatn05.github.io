@@ -1,18 +1,14 @@
-// year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// nav background on scroll
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30));
 
-// reveal on scroll
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// "coming soon" toast
 const toast = document.getElementById('toast');
 const defaultToastMessage = toast ? toast.textContent : '';
 let toastTimer;
@@ -27,7 +23,6 @@ document.querySelectorAll('[data-soon]').forEach(el => {
   });
 });
 
-// active nav link: highlight the link that matches the current page
 const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 const navAnchors = [...document.querySelectorAll('.navlinks a')];
 navAnchors.forEach(a => {
@@ -36,7 +31,6 @@ navAnchors.forEach(a => {
   if (target === here) a.classList.add('active');
 });
 
-// scroll-spy for same-page anchors (e.g. About on the home page)
 const pairs = navAnchors
   .map(a => {
     const href = a.getAttribute('href') || '';
