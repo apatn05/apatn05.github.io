@@ -14,14 +14,33 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // "coming soon" toast
 const toast = document.getElementById('toast');
+const defaultToastMessage = toast ? toast.textContent : '';
 let toastTimer;
 document.querySelectorAll('[data-soon]').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     if (!toast) return;
+    toast.textContent = defaultToastMessage;
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  });
+});
+
+// Certificate badges use href="#" as an easy-to-find placeholder.
+// Once the href is replaced with a real URL, the badge opens it in a new tab.
+document.querySelectorAll('[data-certificate]').forEach(link => {
+  if (link.getAttribute('href') !== '#') return;
+  link.classList.add('placeholder');
+  const action = link.querySelector('.certificate-action');
+  if (action) action.textContent = 'Certificate link coming soon';
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!toast) return;
+    toast.textContent = 'Certificate link coming soon — add the URL in skills.html.';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
   });
 });
 
