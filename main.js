@@ -27,23 +27,6 @@ document.querySelectorAll('[data-soon]').forEach(el => {
   });
 });
 
-// Certificate badges use href="#" as an easy-to-find placeholder.
-// Once the href is replaced with a real URL, the badge opens it in a new tab.
-document.querySelectorAll('[data-certificate]').forEach(link => {
-  if (link.getAttribute('href') !== '#') return;
-  link.classList.add('placeholder');
-  const action = link.querySelector('.certificate-action');
-  if (action) action.textContent = 'Certificate link coming soon';
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (!toast) return;
-    toast.textContent = 'Certificate link coming soon — add the URL in skills.html.';
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
-  });
-});
-
 // active nav link: highlight the link that matches the current page
 const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 const navAnchors = [...document.querySelectorAll('.navlinks a')];
