@@ -172,7 +172,7 @@ section{ padding:80px 0; border-top:1px solid var(--line); }
   text-decoration:none; color:inherit; display:flex; flex-direction:column;
   transition:transform .25s, border-color .25s, box-shadow .25s;
 }
-.card:hover{ transform:translateY(-5px); border-color:var(--accent); box-shadow:0 18px 40px rgba(0,0,0,.35); }
+.card[href]:hover{ transform:translateY(-5px); border-color:var(--accent); box-shadow:0 18px 40px rgba(0,0,0,.35); }
 .card .ptag{ font-family:var(--mono); font-size:.72rem; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; }
 .card h3{ font-family:var(--serif); font-weight:500; font-size:1.45rem; margin:10px 0 8px; }
 .card p{ color:var(--muted); font-size:.96rem; flex:1; }
