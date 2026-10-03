@@ -9,20 +9,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-const toast = document.getElementById('toast');
-const defaultToastMessage = toast ? toast.textContent : '';
-let toastTimer;
-document.querySelectorAll('[data-soon]').forEach(el => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (!toast) return;
-    toast.textContent = defaultToastMessage;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
-  });
-});
-
 const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 const navAnchors = [...document.querySelectorAll('.navlinks a')];
 navAnchors.forEach(a => {
